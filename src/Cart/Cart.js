@@ -9,7 +9,7 @@ export default function Cart() {
         getCartProducts()
     },[])
     async function getCartProducts(){
-        const response=await axios.get(${process.env.REACT_APP_BACKEND_URL}/api/cart?userId=${userId})
+        const response=await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/cart?userId=${userId}`)
         setCartItems(response.data.items)
         setLoading(false)
         console.log(response.data.items)
